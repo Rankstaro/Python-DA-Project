@@ -57,15 +57,11 @@ output_file('graph4.html')
 
 pd.set_option('display.max_columns', None)
 
-hover = HoverTool(tooltips=None, mode='hline')
-
-# the crosshair option gives us a cross to hover with
 helpful_time = figure(
     title='Relationship between Helpfulness and Time Played',
     x_axis_label='Helpfulness',
     y_axis_label='Time Played')
 
-# we can add color to the hover tool with hover_color parameter
 helpful_time.circle(df['helpful'], 
              df['hour_played'],
              size=4)
@@ -74,13 +70,12 @@ show(helpful_time)
 
 # Vis 5
 output_file('graph5.html')
-# the crosshair option gives us a cross to hover with
+
 helpful_funny = figure(
     title='Relationship between Helpfulness and Funniness',
     x_axis_label='Helpfulness',
     y_axis_label='Funniness')
 
-# we can add color to the hover tool with hover_color parameter
 helpful_funny.diamond(df['helpful'], 
              df['funny'],
              size=4)
